@@ -18,6 +18,14 @@
   )
 ;;
 
+;; https://stackoverflow.com/a/10867354/8571660
+(add-hook 'term-setup-hook
+  (lambda ()
+    (define-key function-key-map "\e[1;9A" [M-up])
+    (define-key function-key-map "\e[1;9B" [M-down])
+    (define-key function-key-map "\e[1;9C" [M-right])
+    (define-key function-key-map "\e[1;9D" [M-left])))
+
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
 ;; (setq user-full-name "John Doe"
