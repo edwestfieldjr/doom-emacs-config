@@ -12,11 +12,21 @@
                               (scroll-down 1)))
   (global-set-key [mouse-5] (lambda ()
                               (interactive)
-                              (scroll-up 0)))
+                              (scroll-up 1)))
+  (global-set-key [C-mouse-4] (lambda ()
+                                (interactive)
+                                (evil-scroll-page-up 1)))
+  (global-set-key [C-mouse-5] (lambda ()
+                                (interactive)
+                                (evil-scroll-page-down 1)))
+
   (defun track-mouse (e))
   (setq mouse-sel-mode t)
-  )
+)
 ;;
+
+;; https://github.com/doomemacs/doomemacs/issues/2688#issuecomment-596684817
+(setq confirm-kill-emacs nil)
 
 ;; https://stackoverflow.com/a/10867354/8571660
 (add-hook 'term-setup-hook
